@@ -1,0 +1,257 @@
+.playersall {
+    background-image: url('../assets//back.png');
+    background-size: cover; 
+    background-position: center; 
+}
+
+.playersall {
+    width: 100vw;
+    background-image: url('path_to_your_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.players {
+    width: 100%;
+    background-color: rgb(58, 91, 174);
+}
+.teams {
+    width: 100%;
+    background-color: rgb(58, 91, 174);
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    margin-top: 8%;
+    box-sizing: border-box; 
+}
+
+.row div {
+    width: 300px;
+    max-width: 90vw; 
+}
+
+.card {
+    position: relative;
+    height: 400px;
+    width: 200px;
+    margin: 20px;
+    transition: ease all 2.3s;
+    perspective: 1200px;
+}
+
+.card:hover .cover {
+    transform: rotateX(0deg) rotateY(-180deg);
+}
+
+.card:hover .cover:before {
+    transform: translateZ(30px);
+}
+
+.card:hover .cover:after {
+    background-color: rgb(47, 23, 126);
+}
+
+.card:hover .cover h1 {
+    transform: translateZ(100px);
+}
+
+.card:hover .cover .price {
+    transform: translateZ(60px);
+}
+
+.card:hover .cover a {
+    transform: translateZ(-60px) rotateY(-180deg);
+}
+
+.cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.cover:before {
+    content: '';
+    position: absolute;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 12px rgb(38, 41, 116);
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    transition: ease all 2.3s;
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+}
+
+.cover:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    transition: ease all 1.3s;
+    background: rgba(48, 11, 116, 0.099);
+}
+
+.cover h1 {
+    font-weight: 600;
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    z-index: 3;
+    font-size: 1.5em;
+    transform: translateZ(0px);
+}
+
+.cover .price {
+    font-weight: 200;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    z-index: 4;
+    font-size: 1.2em;
+    transform: translateZ(0px);
+}
+
+.card-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #130830;
+    transform-style: preserve-3d;
+    transition: ease all 2.3s;
+    transform: translateZ(-1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.card-back a,
+.card-back button {
+    transform-style: preserve-3d;
+    transition: ease transform 2.3s, ease background 0.5s;
+    transform: translateZ(-1px) rotateY(-180deg);
+    background: transparent;
+    border: 1px solid white;
+    font-weight: 200;
+    font-size: 1.3em;
+    color: white;
+    padding: 14px 32px;
+    outline: none;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.card-back a:hover,
+.card-back button:hover {
+    background-color: white;
+    color: #0b0f08;
+}
+
+.titlee {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        height: 350px;
+        width: 180px;
+    }
+    .cover h1 {
+        font-size: 1.3em;
+    }
+    .cover .price {
+        font-size: 1em;
+    }
+    .card-back a, .card-back button {
+        font-size: 1.1em;
+        padding: 12px 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        height: 300px;
+        width: 160px;
+    }
+    .cover h1 {
+        font-size: 1.2em;
+    }
+    .cover .price {
+        font-size: 0.9em;
+    }
+    .card-back a, .card-back button {
+        font-size: 1em;
+        padding: 10px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: 250px;
+        width: 140px;
+    }
+    .cover h1 {
+        font-size: 1.1em;
+    }
+    .cover .price {
+        font-size: 0.8em;
+    }
+    .card-back a, .card-back button {
+        font-size: 0.9em;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        height: 220px;
+        width: 120px;
+    }
+    .cover h1 {
+        font-size: 1em;
+    }
+    .cover .price {
+        font-size: 0.7em;
+    }
+    .card-back a, .card-back button {
+        font-size: 0.8em;
+        padding: 6px 16px;
+    }
+}
+
+
+.players {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
